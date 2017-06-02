@@ -1,0 +1,81 @@
+*{
+	font-family:'メイリオ';
+	background-color:#ffffff;
+}
+
+body{
+	padding:0;
+	margin:0;
+
+}
+
+.header{
+	font-size:35px;
+	height:70px;
+	width:100%;
+	padding-top:30px;
+	margin:0;
+	color:#ffffff;
+	background-color:#00608d;
+}
+
+table{
+	margin-top:100px;
+}
+
+th{
+	background-color:#afeeee;
+	border: none;
+	cursor: pointer;
+    height: 45px;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+    width: 100%;
+
+}
+
+.button-panel {
+
+  width: 100%;
+}
+
+.button-panel .button {
+  background: #afeeee;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  height: 50px;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button:hover {
+  background:#afeeee;
+}
+
+input[type=text]{
+width:300px;
+height:50px;
+}
+
+input[type=password]{
+width:300px;
+height:50px;
+
+}
+
+.footer{
+	height:70px;
+	padding-top:30px;
+	color:#ffffff;
+	background: linear-gradient(#05FBFF, #1E00FF);
+	margin-top:108px;
+	text-align:right;
+}

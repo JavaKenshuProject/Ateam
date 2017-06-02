@@ -1,0 +1,276 @@
+*{
+	font-family:'メイリオ';
+	background-color:#ffffff;
+}
+
+body{
+	padding:0px;
+	margin:0px;
+}
+
+table{
+	padding-top:13px;
+}
+
+.header{
+	font-size:35px;
+	height:70px;
+	width:100%;
+	padding-top:30px;
+	margin:0;
+	color:#ffffff;
+	background-color:#00608d;
+}
+
+.footer{
+	height:70px;
+	padding-top:30px;
+	color:#ffffff;
+	background: linear-gradient(#05FBFF, #1E00FF);
+	margin-top:34px;
+	text-align:right;
+}
+
+h1{
+	 background:#b7ffdb;
+ 	 padding:20px 10px;
+ 	 border-left:8px solid #00bfff;
+}
+
+.button-panel1 {
+  width: 100%;
+
+}
+
+.button-panel1 .button1 {
+  background: #afeeee;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button1:hover {
+  background:#afeeee;
+}
+
+.button-panel2 {
+
+  width: 100%;
+}
+
+.button-panel2 .button2 {
+  background: #b0e0e6;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button2:hover {
+  background:#b0e0e6;
+}
+
+.button-panel3 {
+
+  width: 100%;
+}
+
+.button-panel3 .button3 {
+  background: #87cefa;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size:24px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button3:hover {
+  background:#87cefa;
+}
+
+.button-panel4 {
+
+  width: 100%;
+}
+
+.button-panel4 .button4 {
+  background: #00bfff;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button4:hover {
+  background:#00bfff;
+}
+
+.button-panel5 {
+
+  width: 100%;
+}
+
+.button-panel5 .button5 {
+  background: #1e90ff;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size:24px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button5:hover {
+  background:#1e90ff;
+}
+
+.button-panel6 {
+  width: 100%;
+}
+
+.button-panel6 .button6 {
+  background: #006eb0;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-align:center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button6:hover {
+  background:#006eb0;
+}
+
+.d1 {
+  position: relative;
+  height:60px;
+  text-align: center;
+}
+.d1:after{
+  content:"";
+  display:block;
+  height:8px;
+  width:100%;
+  background:rgba(129,194,250,0.5);
+  position:absolute;
+  bottom:4px;
+  background:#b0e0e6;
+}
+
+.d2 {
+  position: relative;
+  height:60px;
+  text-align: center;
+
+}
+.d2:after{
+  content:"";
+  display:block;
+  height:8px;
+  width:100%;
+  background:rgba(129,194,250,0.5);
+  position:absolute;
+  bottom:4px;
+  background:#b0e0e6;
+}
+
+.d3 {
+  position: relative;
+  height:60px;
+  text-align: center;
+
+}
+.d3:after{
+  content:"";
+  display:block;
+  height:8px;
+  width:100%;
+  background:rgba(129,194,250,0.5);
+  position:absolute;
+  bottom:4px;
+  background:#87cefa;
+}
+
+.d4 {
+  position: relative;
+  height:60px;
+  text-align: center;
+
+}
+.d4:after{
+  content:"";
+  display:block;
+  height:8px;
+  width:100%;
+  background:rgba(129,194,250,0.5);
+  position:absolute;
+  bottom:4px;
+  background:#00bfff
+}
+
+.d5 {
+  position: relative;
+  height:60px;
+  text-align: center;
+}
+
+.d5:after{
+  content:"";
+  display:block;
+  height:8px;
+  width:100%;
+  background:rgba(129,194,250,0.5);
+  position:absolute;
+  bottom:4px;
+  background:#1e90ff
+}
+
+.d6 {
+  position: relative;
+  height:60px;
+  text-align: center;
+
+}
+.d6:after{
+  content:"";
+  display:block;
+  height:8px;
+  width:100%;
+  background:rgba(129,194,250,0.5);
+  position:absolute;
+  bottom:4px;
+  background:#006eb0;
+}
