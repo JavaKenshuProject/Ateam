@@ -27,7 +27,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.EmployeeDAO;
-import dao.LicenseDAO;
 import dao.SectionDAO;
 
 /**
@@ -69,7 +68,6 @@ public class NewEmployeeServlet extends HttpServlet {
         //入力した情報を取得
         EmployeeDAO edao = new EmployeeDAO();
         SectionDAO sdao = new SectionDAO();
-        LicenseDAO ldao = new LicenseDAO();
 
         String empCode = request.getParameter("empCode");
         String lName = request.getParameter("lName");
@@ -77,35 +75,41 @@ public class NewEmployeeServlet extends HttpServlet {
         String lRubyName = request.getParameter("lRubyName");
         String fRubyName = request.getParameter("fRubyName");
         String sex = request.getParameter("sex");
-        String birthYear = request.getParameter("birthYear");
-        System.out.println(birthYear);
-        String birthMonth = request.getParameter("birthMonth");
-        String birthDate = request.getParameter("birthDate");
-        String empYear = request.getParameter("empYear");
-        String empMonth = request.getParameter("empMonth");
+        String birthDay = request.getParameter("birthDay");
+        String sectionName = request.getParameter("busyo");
         String empDate = request.getParameter("empDate");
-        String sectionName = request.getParameter("section");
-        String licenseName = request.getParameter("license");
-        String birthDay = birthYear + birthMonth + birthDate;
-        empDate = empYear + empMonth + empDate;
 
         String sectionCode = sdao.searchSectionCode(sectionName);
 
-        if(licenseName != null){
-            count = edao.NewEmployee(empCode, lName, fName, lRubyName, fRubyName, sex, birthDay, sectionCode, empDate);
-        	if(count == 1){
-        	}
-        }
+        String kana = "^[\\u30A0-\\u30FF]+$";
+        String num = "\\A[-]?[0-9]+\\z";
 
-     // 移譲する先のjspを格納する変数url
+        // 移譲する先のjspを格納する変数url
         String url = null;
+
+        if(empCode!=null && lName!=null && fName!=null && lRubyName!=null && fRubyName!=null){
+
+			if(lRubyName.matches(kana) && fRubyName.matches(kana)
+					&& !(lName.matches(num)) && !(fName.matches(num))
+					&& !(lRubyName.matches(num)) && !(fRubyName.matches(num))){
+
+				if(empCode.matches("[0-9a-zA-Z]+")){
+			        count = edao.NewEmployee(empCode, lName, fName
+			        	, lRubyName, fRubyName, sex, birthDay, sectionCode, empDate);
+				}else{
+					url = "employeeRegistrationError.jsp";
+				}
+			}else{
+				url = "employeeRegistrationError.jsp";
+			}
+		}else{
+			url = "employeeRegistrationError.jsp";
+		}
+
+
+
+
         if(count == 1){
-        	if(!(licenseName.equals("no"))){
-            	String licenseCode = ldao.getMLicenseCode(licenseName);
-                java.util.Date d = new java.util.Date();
-                java.sql.Date date = new java.sql.Date(d.getTime());
-            	ldao.insert_license(empCode, licenseCode, date);
-        	}
         	url = "employeeRegistrationComp.jsp";
         }else if(count == 0){
         	url = "employeeRegistrationError.jsp";
@@ -114,7 +118,5 @@ public class NewEmployeeServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
 
-
 	}
-
 }

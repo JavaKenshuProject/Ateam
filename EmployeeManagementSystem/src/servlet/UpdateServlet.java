@@ -53,40 +53,51 @@ public class UpdateServlet extends HttpServlet {
         String lkana_name = request.getParameter("lkana_name");
         String fkana_name = request.getParameter("fkana_name");
         String sex = request.getParameter("sex");
-        String sectionName = request.getParameter("sectionname");
-        String action = request.getParameter("ACTION");
-
+        String sectionName = request.getParameter("sectionName");
+        System.out.println(sectionName);
+        int count = 0;
 
         HttpSession session1 = request.getSession();
         String empCode = (String)session1.getAttribute("empCode");
 
 
         String url = null;
+        String kana = "^[\\u30A0-\\u30FF]+$";
+        String num = "\\A[-]?[0-9]+\\z";
+
 
 //	        HttpSession session = request.getSession();
 
-        if(action.equals("更新")) {
-
         	//入力がすべて行われていたらこっち
-        	if(lname!=null && fname!=null && lkana_name!=null && fkana_name!=null
-        			&& (sex.equals("1") || sex.equals("2")) && sectionName!=null){
+        	/*
+        	 * String katakana = "カタカナ";
+				if (katakana.matches("^[\\u30A0-\\u30FF]+$")) {
+    			System.out.println("全てカタカナ");
+    			 "\\A[-]?[0-9]+\\z"=数字かの判断
+        	 */
+        	if(lname!=null && fname!=null && lkana_name!=null && fkana_name!=null && sectionName!=null){
 
-        		 String sectionCode = sdao.searchSectionCode(sectionName);
-//        		 System.out.println(sectionCode);
-        		int count = edao.change(lname,fname,lkana_name,fkana_name,sex,sectionCode,empCode);
+        		if(lkana_name.matches(kana) || fkana_name.matches(kana)
+        				|| !(lname.matches(num)) || !(fname.matches(num))
+        							|| !(lkana_name.matches(num)) || !(fkana_name.matches(num))){
+        				String sectionCode = sdao.searchSectionCode(sectionName);
 
-        		if(count==1){
-        			 url = "alterEmployeeRegistration.jsp";
+        		        count = edao.change(lname,fname,lkana_name,fkana_name,sex,sectionCode,empCode);
         		}else{
+        			url = "alterEmployeeError.jsp";
+        	}
+
+
+
+        	if(count==1){
+        			url = "alterEmployeeRegistration.jsp";
+        	}else{
         			url = "alterEmployeeError.jsp";
         		}
         	}else{
         		url = "alterEmployeeError.jsp";
         	}
 
-        }else {
-        		url = "alterEmployee.jsp";
-        }
     	RequestDispatcher rd = request.getRequestDispatcher(url);
     	rd.forward(request, response);
 	}
