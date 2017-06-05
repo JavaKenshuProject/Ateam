@@ -1,0 +1,105 @@
+*{
+	font-family:'メイリオ';
+	background-color:#ffffff;
+}
+
+body{
+	padding:0px;
+	margin:0px;
+}
+
+.header{
+	font-size:35px;
+	height:70px;
+	width:100%;
+	padding-top:30px;
+	margin:0;
+	color:#ffffff;
+	background-color:#00608d;
+}
+
+.under {
+	margin-top:20px;
+		font-size:25px;
+ 	     border-bottom: solid 5px #87CEFA;
+  }
+
+.button-panel1 {
+  width: 100%;
+   margin-top:60px;
+
+}
+
+.button-panel1 .button1 {
+  background: #afeeee;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+h1{
+	background:#b7ffdb;
+	padding:20px 10px;
+	border-left:8px solid #00bfff;
+	}
+
+td,th{
+	text-align: center;
+	vertical-align: middle;
+}
+
+th{
+	font-size:20px;
+	background: #afeeee;
+}
+.button-panel2 {
+  width: 100%;
+   margin-top:60px;
+
+}
+
+.button-panel2 .button2 {
+  background: #afeeee;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button-panel3 {
+  width: 100%;
+   margin-top:60px;
+
+}
+
+.button-panel3 .button3 {
+  background: #afeeee;
+  border: none;
+  color:#000000;
+  cursor: pointer;
+  height: 60px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+#all{
+	 overflow : auto; scrollbar-base-color : #00fa9a;
+	 scrollbar-arrow-color : #00008b;
+}
